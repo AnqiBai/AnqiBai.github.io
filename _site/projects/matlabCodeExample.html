@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>codeSample</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="header">Matlab Code Sample</h1>
+            <p class="header">Anqi Bai</p>
+        </header>
+        <section>
+            <h3>About:</h3>
+            <p>The code sample is taken from the Computer Vision course homework I finished when I studied at Carnegie Mellon University. Some scripts are provided as course material, and they will have comments (as shown below) at the beginning of the M file. I don't know the exact ratio, but I'm sure I wrote more than 90% of the code in this folder.</p>
+            <img src="images/matlabCodeSample/provided.PNG" >
+
+
+            <h3>Files:</h3>
+            <pre><code>/data : images, and hand-selected corresponding points in 'tajPts.mat'. </code></pre>
+            <pre><code>/matlab : functions and scripts for function tests;</code></pre>
+            <pre><code>/matlab/using_BRIEF : BRIEF descriptors calculation and visualization; </code></pre>
+            <pre><code>/matlab/imageStitching : files for image stitching;</code></pre>
+            <img src="images/matlabCodeSample/ScriptFolder.PNG" >
+            <img src="images/matlabCodeSample/dataFolder.PNG" >
+            
+
+            <h3>How to test:</h3>
+            <p>The following named scripts can be run directly. And the result screenshots are shown.</p>
+            <h4>run_plotMatchesForBrief</h4>
+            <p>Compute BRIEF descriptors of two images. Images are taken via the same camera with only rotation in position (no translation). Calculate the matches from two sets of the descriptors, and plot the matches(corresponding features in the images).</p>
+            <img src="images/matlabCodeSample/plotMatches.PNG" >
+            <h4>run_imageStitching_handSelectFeatures</h4>
+            <p>Image stitching with pre-selected feature points. A linear system is solved to find the planar homography matrix.</p>
+            <img src="images/matlabCodeSample/runImageStitching_hand.PNG" >
+
+            <h4>run_imageStitching_autoSelectFeatures</h4>
+            <p>Matlab computer vision toolbox is used to find and match features. RANSAC is used to get the best estimation of the planar homography matrix. </p>
+            <img src="images/matlabCodeSample/runImageStitching_auto.PNG" >
+            
+             
+            
+        </section>
+        <footer>
+            <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+</body>
+
+</html>
