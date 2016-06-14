@@ -6,13 +6,143 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Jun 2016 14:44:14 -0400</pubDate>
-    <lastBuildDate>Fri, 10 Jun 2016 14:44:14 -0400</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 11:06:00 -0400</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 11:06:00 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
+        <title>中文测试</title>
+        <description>&lt;p&gt;中文测试&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Jun 2016 09:50:02 -0400</pubDate>
+        <link>http://yourdomain.com/%E4%B8%AD%E6%96%87/2016/06/13/%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/%E4%B8%AD%E6%96%87/2016/06/13/%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95.html</guid>
+        
+        
+        <category>中文</category>
+        
+      </item>
+    
+      <item>
+        <title>Notes: MSTR and databases</title>
+        <description>&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Metadata v.s. Data warehouse&lt;/p&gt;
+&lt;p&gt;Metadata is data about data; 
+While the data warehouse is the real source of the facts and dimensions that you will analyze.&lt;/p&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Still don’t understand;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There are two types of project source, two-tiers (Direct) and three-tiers (Intelligence Server). Two-tiered project sources connect directly to the metadata database, while three-tiered first connect to an Intelligence Server, which in turn connects to the metadata.&lt;/li&gt;
+  &lt;li&gt;connect to mysql 
+https://community.microstrategy.com/t5/tkb/articleprintpage/tkb-id/architect/article-id/6327
+https://community.microstrategy.com/t5/Web/TN45665-How-to-connect-to-a-MySQL-5-1-Community-database/ta-p/195342&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Pipeline&lt;/p&gt;
+
+&lt;p&gt;从very start开始（就是除了一个microstrategy server和一堆数据之外什么的情况）；
+现在我在本机上装了MSTR Developer，Iserver是在我的电脑上运行的。
+1. create a database for metadata; （删除project source之后新建，虽然名字被更改，但是内容都自动恢复了。这是因为一个server上只有一个metadata，而metadata没有删除的情况下被自动连接了。我最后解决的方式是，直接把metadata database从它的数据库server上删除。）&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create the DSN for the metadata;
+(connectivity wizard)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;create the metadata shell; 
+(configuration wizard)
+when finish, continue to conigure the server;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;create project source; 
+(configure with database user/password;
+ log in with administrator)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;create database instance;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;create project object; (wait patiently;)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Connect to a MySQL 5.1 Community database instance&lt;/p&gt;
+
+&lt;p&gt;In order to connect to a MySQL 5.1 Community database instance from MicroStrategy Analytics Desktop 9.4.1.2, the MySQL ODBC Driver version 5.2.5 (32 bits - Unicode) should be used.&lt;/p&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Visit MSTR via web&lt;/p&gt;
+
+&lt;p&gt;http://localhost/MicroStrategy/asp/Admin.aspx&lt;/p&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;To find which version of windows you are running, enter the following commands in the Command Prompt or Powershell:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;wmic os get caption
+&amp;gt;wmic os get osarchitecture&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Use MongoDB on Windows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;install MongoDB; (use .msi;)&lt;/li&gt;
+  &lt;li&gt;set up the MongoDB environment; (sepcify the path for data files;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The following method is via command line; you can also edit the configuration file for MongoDB;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;mongod --dbpath &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;path/to/data_repository]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;start the MongoDB;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;mongod&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The “waiting for connections” message in the console output indicates that the mongod.exe process is running successfully;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;connect to MongoDB;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To connect to MongoDB through the mongo.exe shell, open another Command Prompt:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;mongo&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;import data;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;mongoimport --db &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; --collection restaurants --drop --file ~/downloads/primer-dataset.json&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;use the sample data;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(The following is under the MongoDB shell;)
+Quick reference can be found at https://docs.mongodb.com/manual/reference/mongo-shell/;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;show dbs;
+&amp;gt;use &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;;
+&amp;gt;show collections; 
+&amp;gt;quit&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Basic query&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&amp;gt;db.[colloection_name].find&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Mon, 13 Jun 2016 09:31:02 -0400</pubDate>
+        <link>http://yourdomain.com/mstr-public/2016/06/13/Notes-MSTR.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/mstr-public/2016/06/13/Notes-MSTR.html</guid>
+        
+        
+        <category>MSTR-public</category>
+        
+      </item>
+    
+      <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;[This line is added to the default jekyll blog post example.]&lt;/p&gt;
+
+&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -39,24 +169,25 @@
       </item>
     
       <item>
-        <title>Test My Own</title>
-        <description>
+        <title>SQL Practice</title>
+        <description>&lt;p&gt;MySQL server is used.
+Practice is Conducted on Ubuntu.&lt;/p&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;How to Access the MySQL shell&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-mysql&quot; data-lang=&quot;mysql&quot;&gt;mysql -u root -p&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p style=&quot;color:gray; font-size: 140%;&quot;&gt;Install Sakila in MySQL;&lt;/p&gt;
+&lt;p&gt;Sakila is a toy database; (its ER diagram is also provided.)
+&lt;a href=&quot;https://dev.mysql.com/doc/sakila/en/sakila-installation.html&quot;&gt;Sakila Installation&lt;/a&gt;&lt;/p&gt;
+
 </description>
-        <pubDate>Sun, 23 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/2015/08/23/test-My-Own.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/08/23/test-My-Own.html</guid>
+        <pubDate>Thu, 09 Jun 2016 11:33:37 -0400</pubDate>
+        <link>http://yourdomain.com/database/2016/06/09/SQL-Practice.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/database/2016/06/09/SQL-Practice.html</guid>
         
         
-      </item>
-    
-      <item>
-        <title>New Years Eve Is Awesome</title>
-        <description>
-</description>
-        <pubDate>Sat, 31 Dec 2011 00:00:00 -0500</pubDate>
-        <link>http://yourdomain.com/2011/12/31/new-years-eve-is-awesome.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2011/12/31/new-years-eve-is-awesome.html</guid>
-        
+        <category>database</category>
         
       </item>
     

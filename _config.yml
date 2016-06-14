@@ -21,3 +21,4 @@ github_username:  anqibai
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
