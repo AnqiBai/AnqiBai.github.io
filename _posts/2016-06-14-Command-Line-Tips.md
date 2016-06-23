@@ -7,5 +7,5 @@ categories: Notes
 
 
 {% highlight shell %}
->git commit -am "Clear directories. (Remove deleted files.)"
+> git commit -am "Clear directories. (Remove deleted files.)"
 {% endhighlight %}

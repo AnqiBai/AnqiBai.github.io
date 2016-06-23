@@ -19,5 +19,10 @@ Install Sakila in MySQL;
 Sakila is a toy database; (its ER diagram is also provided.)
 [Sakila Installation][sakila-installation]
 
+SQL DELETE is used to delete rows in a table; 
+
+SQL parameters can be used to protect a web site from SQL injection attacks.
+
+
 
 [sakila-installation]: https://dev.mysql.com/doc/sakila/en/sakila-installation.html

@@ -14,9 +14,6 @@ Still don't understand;
 {: style="color:gray; font-size: 140%;"}
 
 1. There are two types of project source, two-tiers (Direct) and three-tiers (Intelligence Server). Two-tiered project sources connect directly to the metadata database, while three-tiered first connect to an Intelligence Server, which in turn connects to the metadata.
-2. connect to mysql 
-https://community.microstrategy.com/t5/tkb/articleprintpage/tkb-id/architect/article-id/6327
-https://community.microstrategy.com/t5/Web/TN45665-How-to-connect-to-a-MySQL-5-1-Community-database/ta-p/195342
 
 Pipeline 
 {: style="color:gray; font-size: 140%;"}
@@ -46,7 +43,7 @@ Connect to a MySQL 5.1 Community database instance
 In order to connect to a MySQL 5.1 Community database instance from MicroStrategy Analytics Desktop 9.4.1.2, the MySQL ODBC Driver version 5.2.5 (32 bits - Unicode) should be used.
 
 
-Visit MSTR via web
+Visit MSTR via web (localhost/iserver on the current computer)
 {: style="color:gray; font-size: 140%;"}
 
 http://localhost/MicroStrategy/asp/Admin.aspx
@@ -92,7 +89,7 @@ To connect to MongoDB through the mongo.exe shell, open another Command Prompt:
 5. import data;
 
 {% highlight shell %}
-> mongoimport --db test --collection restaurants --drop --file ~/downloads/primer-dataset.json
+> mongoimport --db test --collection restaurants --type json --file ~/downloads/primer-dataset.json
 {% endhighlight %}
 
 
@@ -113,3 +110,11 @@ Basic query
 {% highlight shell %}
 >db.[colloection_name].find()
 {% endhighlight %}
+
+Use mySQL database in MSTR (import mySQL database to MSTR)
+{: style="color:gray; font-size: 140%;"}
+
+https://community.microstrategy.com/t5/tkb/articleprintpage/tkb-id/architect/article-id/6327
+https://community.microstrategy.com/t5/Web/TN45665-How-to-connect-to-a-MySQL-5-1-Community-database/ta-p/195342
+
+关键是到MicroStrategy的文档查询当前使用的MSTR的版本支持的database driver， 然后用相应的driver进行连接。之前MongoDB的数据库连不上也是相同的原因， 用了正确Version以后就解决了。
