@@ -10,9 +10,23 @@ Practice is Conducted on Ubuntu.
 How to Access the MySQL shell
 {: style="color:gray; font-size: 140%;"}
 
-{% highlight mysql %}
-mysql -u root -p
-{% endhighlight %}
+[comment]: <> (This is a comment, it will not be included)
+
+<!-- 
+	{% highlight mysql %}
+ mysql -u root -p
+ {% endhighlight %}
+
+ // This highlight code snippet has been commented out. 
+-->
+
+~~~ SQL
+mysql -u root -p 
+~~~
+
+~~~ python 
+import lalalalallalalal
+~~~
 
 Install Sakila in MySQL;
 {: style="color:gray; font-size: 140%;"}
