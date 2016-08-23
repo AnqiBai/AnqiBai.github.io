@@ -117,4 +117,7 @@ Use mySQL database in MSTR (import mySQL database to MSTR)
 https://community.microstrategy.com/t5/tkb/articleprintpage/tkb-id/architect/article-id/6327
 https://community.microstrategy.com/t5/Web/TN45665-How-to-connect-to-a-MySQL-5-1-Community-database/ta-p/195342
 
-关键是到MicroStrategy的文档查询当前使用的MSTR的版本支持的database driver， 然后用相应的driver进行连接。之前MongoDB的数据库连不上也是相同的原因， 用了正确Version以后就解决了。
+关键是到MicroStrategy的文档查询当前使用的MSTR的版本支持的database driver， 
+在下面的这个地址查询：
+(https://microstrategyhelp.atlassian.net/wiki/display/README102/MicroStrategy+10.2+Certified+and+Supported+Configurations#MicroStrategy10.2CertifiedandSupportedConfigurations-ApplicationServers)
+然后用相应的driver进行连接。之前MongoDB的数据库连不上也是相同的原因， 用了正确Version以后就解决了。
